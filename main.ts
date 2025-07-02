@@ -1,18 +1,18 @@
 radio.onReceivedValue(function (name, value) {
-    if (name == "presion") {
-        OLED.writeStringNewLine("presion")
+    if (name == "Presion") {
+        OLED.writeStringNewLine("Presion")
         OLED.writeNumNewLine(value)
-        datalogger.log(datalogger.createCV("presion", value))
+        datalogger.log(datalogger.createCV("Presion", value))
     } else {
-        if (name == "humedad") {
-            OLED.writeStringNewLine("humedad")
+        if (name == "Humedad") {
+            OLED.writeStringNewLine("Humedad")
             OLED.writeNumNewLine(value)
-            datalogger.log(datalogger.createCV("humedad", value))
+            datalogger.log(datalogger.createCV("Humedad", value))
         } else {
-            if (name == "temperatura") {
-                OLED.writeStringNewLine("temperatura")
+            if (name == "Temp") {
+                OLED.writeStringNewLine("Temperatura")
                 OLED.writeNumNewLine(value)
-                datalogger.log(datalogger.createCV("temperatura", value))
+                datalogger.log(datalogger.createCV("Temp", value))
             } else {
                 if (name == "velocidad") {
                     OLED.writeStringNewLine("velocidad")
@@ -24,11 +24,12 @@ radio.onReceivedValue(function (name, value) {
     }
 })
 radio.setGroup(1)
+radio.setTransmitPower(7)
 OLED.init(128, 64)
 OLED.clear()
 datalogger.setColumnTitles(
-"presion",
-"humedad",
-"temperatura",
+"Presion",
+"Humedad",
+"Temp",
 "velocidad"
 )

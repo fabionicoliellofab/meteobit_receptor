@@ -1,22 +1,23 @@
 radio.onReceivedValue(function (name, value) {
+    OLED.drawFilledCircle(84, 32, 10)
     if (name == "Presion") {
-        OLED.writeStringNewLine("Presion")
-        OLED.writeNumNewLine(value)
+        OLED.writeString("Presion")
+        OLED.writeNum(value)
         datalogger.log(datalogger.createCV("Presion", value))
     } else {
         if (name == "Humedad") {
-            OLED.writeStringNewLine("Humedad")
-            OLED.writeNumNewLine(value)
+            OLED.writeString("Humedad")
+            OLED.writeNum(value)
             datalogger.log(datalogger.createCV("Humedad", value))
         } else {
             if (name == "Temp") {
-                OLED.writeStringNewLine("Temperatura")
-                OLED.writeNumNewLine(value)
+                OLED.writeString("Temperatura")
+                OLED.writeNum(value)
                 datalogger.log(datalogger.createCV("Temp", value))
             } else {
                 if (name == "velocidad") {
-                    OLED.writeStringNewLine("velocidad")
-                    OLED.writeNumNewLine(value)
+                    OLED.writeString("velocidad")
+                    OLED.writeNum(value)
                     datalogger.log(datalogger.createCV("velocidad", value))
                 }
             }
